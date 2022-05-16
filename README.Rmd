@@ -1,0 +1,52 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# foofactors
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of foofactors is to separate a string, but to prevent R from making it a list.
+
+## Installation
+
+You can install the development version of foofactors from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("LaurineSeelt/foofactors")
+```
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+# install.packages("devtools")
+devtools::install_github("LaurineSeelt/foofactors")
+library(foofactors)
+(x <- "alfa,bravo,charlie,delta")
+str_split_one(x, pattern = ",")
+```
+<br>
+This works better than the example below.
+<br>
+```{r}
+(x <- "alfa,bravo,charlie,delta")
+strsplit(x, split = ",")
+stringr::str_split(x, pattern = ",")
+```
+<br>
+This returns a list of 1. Thus output is often inconvenient, so the foofactors function solves this.
