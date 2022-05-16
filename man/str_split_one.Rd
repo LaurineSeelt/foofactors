@@ -7,8 +7,7 @@
 str_split_one(string, pattern, n = Inf)
 }
 \arguments{
-\item{string}{Input vector. Either a character vector, or something
-coercible to one.}
+\item{string}{A character vector with, at most, one element}
 
 \item{pattern}{Pattern to look for.
 
@@ -30,12 +29,17 @@ possible split positions.
 
 For \code{str_split_fixed}, if n is greater than the number of pieces,
 the result will be padded with empty strings.}
-
-\item{x}{A character vector with, at most, one element}
 }
 \value{
 A character vector
 }
 \description{
 Split a string
+}
+\examples{
+x <- "alfa,bravo,charlie,delta"
+str_split_one(x, pattern = ",")
+str_split_one(x, pattern = ",", n = 2)
+y <- "192.168.0.1"
+str_split_one(y, pattern = stringr::fixed("."))
 }
